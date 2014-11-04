@@ -1,0 +1,15 @@
+%h1 Listing haikus
+%table
+  %thead
+    %tr
+      %th Poem
+      %th{:colspan => "3"}
+  %tbody
+    - @haikus.each do |haiku|
+      %tr
+        %td= haiku.poem
+        %td= link_to 'Show', haiku
+        %td= link_to 'Edit', edit_haiku_path(haiku)
+        %td= link_to 'Destroy', haiku, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Haiku', new_haiku_path
