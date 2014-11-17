@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+@HaikuCtrl = ($scope) ->
+  $scope.entries = [
+    {text: "Sipping on green tea \n Computer, write me a poem \n Monday at Whole Foods"}
+    {text: "More words"}
+    {text: "And even more words"}
+  ]

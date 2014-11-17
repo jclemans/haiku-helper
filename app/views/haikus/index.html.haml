@@ -1,16 +1,12 @@
 %h1 Haikus
-%div
+%div{ng_controller: "HaikuCtrl"}
   %form
     %input{ng_model: "newHaiku.text", type: "text"}
   %h4
     {{newHaiku.text}}
-%div
-  -if @haikus
-    - @haikus.each do |haiku|
-      %tr
-        %td= haiku.poem
-        %td= link_to 'Show', haiku
-        %td= link_to 'Edit', edit_haiku_path(haiku)
-        %td= link_to 'Destroy', haiku, method: :delete, data: { confirm: 'Are you sure?' }
+  %h2 Previous Entries
+  %well{ng_repeat: "entry in entries"}
+    %div
+      {{entry.text}}
+
 %br/
-/ = link_to 'New Haiku', new_haiku_path

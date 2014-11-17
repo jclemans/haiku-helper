@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'angularjs-rails'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'sass-rails', '~> 4.0.3'
-
-gem 'haml'
 gem 'rails', '4.1.1'
+gem 'autoprefixer-rails'
+gem 'angularjs-rails'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'sass-rails', '~> 4.0.3'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'haml'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
