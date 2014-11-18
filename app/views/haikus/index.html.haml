@@ -1,12 +1,12 @@
 %h1 Haikus
 %div{ng_controller: "HaikuCtrl"}
-  %form
+  %form{ng_submit: "addHaiku()"}
     %input{ng_model: "newHaiku.text", type: "text"}
+    %input{type: "submit", value: "Add"}
   %h4
     {{newHaiku.text}}
-  %h2 Previous Entries
-  %well{ng_repeat: "entry in entries"}
-    %div
-      {{entry.text}}
+  %h2 Past Entries
+  .well{ng_repeat: "haiku in haikus"}
+    {{haiku.text}}
 
 %br/
