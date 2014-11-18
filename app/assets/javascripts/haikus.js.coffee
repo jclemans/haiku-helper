@@ -1,9 +1,9 @@
-@HaikuCtrl = ($scope) ->
-  $scope.haikus = [
-    {text: "Sipping on green tea \n Computer, write me a poem \n Monday at Whole Foods"}
-    {text: "More words about.. "}
-    {text: "And even more stuff and things.. "}
-  ]
+app = angular.module("HaikuHelper", ["ngResource"])
+
+@HaikuCtrl = ($scope, $resource) ->
+  Haiku = $resource("/haikus/:id", {id: "@id"}, {update: {method: "PUT"}})
+  $scope.haikus = Haiku.query()
+  
   $scope.addHaiku = ->
     haiku = Haiku.save($scope.newHaiku)
     $scope.haikus.push(haiku)
