@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141228060950) do
     t.datetime "updated_at"
   end
 
-  create_table "table_haikus_words", force: true do |t|
+  create_table "haikus_words", force: true do |t|
     t.integer "haiku_id"
     t.integer "word_id"
   end
