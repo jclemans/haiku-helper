@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118011104) do
+ActiveRecord::Schema.define(version: 20141228060950) do
 
   create_table "haikus", force: true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "table_haikus_words", force: true do |t|
+    t.integer "haiku_id"
+    t.integer "word_id"
   end
 
   create_table "words", force: true do |t|
