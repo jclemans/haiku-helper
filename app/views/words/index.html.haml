@@ -1,0 +1,11 @@
+%h1 Words
+.col-md-3
+  %div{ng_controller: "WordCtrl"}
+    %form{ng_submit: "addWord()"}
+      %input{ng_model: "newWord.word", type: "text"}
+      %input{type: "submit", value: "Add Word"}
+    %h4
+      {{newWord.word}}
+  %h2 Available Words
+  .well{ng_repeat: "word in words"}
+    {{word.word}}

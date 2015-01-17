@@ -1,6 +1,6 @@
 %h1 Haiku Helper
 %div{ng_controller: "HaikuCtrl"}
-  %form{ng_submit: "addHaiku()"}
+  %form{ng_init: "haikuIndex", ng_submit: "haikuCreate()"}
     %input{ng_model: "newHaiku.content", type: "text"}
     %input{type: "submit", value: "Add"}
   %h4
