@@ -1,7 +1,6 @@
-app = angular.module("HaikuHelper", ["ngResource"])
 
-.factory "Haiku", ["$resource", "$http", ($resource, $http) ->
-  resource = $resource("api/v1/haikus/:id", {id: "@id"}, {update: {method: "PUT"}})
+.factory 'Haiku', ['$resource', '$http', ($resource, $http) ->
+  resource = $resource('api/v1/haikus/:id', {id: '@id'}, {update: {method: 'PUT'}})
   
   Haiku =
     getHaikus: ->
@@ -16,7 +15,7 @@ app = angular.module("HaikuHelper", ["ngResource"])
       )
 ]
 
-.controller 'HaikuCtrl',["$resource", "$scope", "Haiku", ($resource, $scope, Haiku) ->
+.controller 'HaikuCtrl',['$resource', '$scope', 'Haiku', ($resource, $scope, Haiku) ->
   haikuIndex = ->
     Haiku.getHaikus()
     $scope.haikus = response

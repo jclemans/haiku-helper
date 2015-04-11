@@ -1,0 +1,26 @@
+%h1 Haiku Helper App
+.row
+  .col-sm-6
+    %h5 Haiku builder
+    %div{ng_controller: "HaikuCtrl"}
+      %form{ng_init: "haikuIndex", ng_submit: "haikuCreate()"}
+        .form-group
+          %input{ng_model: "newHaiku.content", type: "text", placeholder: "Enter new haiku"}
+        %button{type: "submit", value: "Add", class: "btn btn-default"}
+      %h4
+        {{newHaiku.content}}
+      %h2 Past Entries
+      %p{ng_repeat: "haiku in haikus"}
+        {{haiku.content}}
+
+    %br/
+
+  .col-sm-6
+    %h5 Dictionary
+    / %div{ng_controller: "WordCtrl"}
+    /   %form{ng_init: "wordIndex", ng_submit: "wordCreate()"}
+    /     %input{ng_model: "newWord.content", type: "text"}
+    /     %input{type: "submit", value: "Add"}
+    /   %h4
+    /     {{newWord.content}}
+    /   %h2 Word Pool

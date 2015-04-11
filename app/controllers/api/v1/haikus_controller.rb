@@ -1,5 +1,5 @@
 class Api::V1::HaikusController < ApplicationController
-  respond_to :json, :html
+  respond_to :json
 
   def index
     respond_with Haiku.all
@@ -10,7 +10,13 @@ class Api::V1::HaikusController < ApplicationController
   end
 
   def create
-    respond_with Haiku.create(params[:content])
+    binding.pry
+    @haiku = Haiku.new(haiku_params)
+    if @haiku.save
+      respond_to do |format|
+        format.json { render json: @haiku }
+      end
+    end
   end
 
   def update
