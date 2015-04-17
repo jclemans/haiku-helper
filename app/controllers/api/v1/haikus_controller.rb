@@ -1,8 +1,9 @@
 class Api::V1::HaikusController < ApplicationController
-  respond_to :json
+  respond_to :html, :json
 
   def index
-    respond_with Haiku.all
+    @haikus = Haiku.all
+    respond_with(@haikus)
   end
 
   def show
@@ -10,7 +11,6 @@ class Api::V1::HaikusController < ApplicationController
   end
 
   def create
-    binding.pry
     @haiku = Haiku.new(haiku_params)
     if @haiku.save
       respond_to do |format|
@@ -25,5 +25,10 @@ class Api::V1::HaikusController < ApplicationController
 
   def destroy
     respond_with Haiku.destroy(params[:id])
+  end
+
+private
+  def haiku_params
+    params.require(:haiku).permit(:content)
   end
 end
