@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'api/v1/haikus#index'
+  root to: 'haikus#index'
+
+  resources :haikus
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do

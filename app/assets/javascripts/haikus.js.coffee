@@ -1,4 +1,4 @@
-
+angular.module("HaikuHelper", [])
 .factory 'Haiku', ['$resource', '$http', ($resource, $http) ->
   resource = $resource('api/v1/haikus/:id', {id: '@id'}, {update: {method: 'PUT'}})
   
