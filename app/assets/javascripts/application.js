@@ -1,5 +1,3 @@
-angular.module('HaikuHelper', ['ngResource', 'ngRoute'])
-
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -16,6 +14,9 @@ angular.module('HaikuHelper', ['ngResource', 'ngRoute'])
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require angular-route
 //= require angular-resource
+//= require angular-rails-templates
 
 //= require_tree .
+

@@ -1,6 +1,6 @@
-angular.module("HaikuHelper", [])
+angular.module('HaikuHelper')
 
-.controller 'HaikuCtrl',['$resource', '$scope', 'Haiku', ($resource, $scope, Haiku) ->
+.controller 'HaikuController',['$resource', '$route', '$scope', 'Haiku', ($resource, $scope, Haiku) ->
   haikuIndex = ->
     Haiku.getHaikus()
     $scope.haikus = response

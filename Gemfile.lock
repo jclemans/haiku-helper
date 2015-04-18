@@ -28,6 +28,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.7)
+    angular-rails-templates (0.1.4)
+      railties (>= 3.1)
+      sprockets
+      tilt
     angularjs-rails (1.2.16)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (4.0.0.1)
@@ -163,6 +167,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
   angularjs-rails
   autoprefixer-rails
   better_errors

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'haikus#index'
+  root to: 'application#index'
 
-  resources :haikus
+  get '*path' => 'application#index'
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
